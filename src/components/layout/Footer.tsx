@@ -70,7 +70,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>© {currentYear} Azərişıq Beyin Mərkəzi. Bütün hüquqlar qorunur.</p>
+          <p> © {currentYear} Azərişıq Beyin Mərkəzi. Bütün hüquqlar qorunur.</p>
         </div>
       </div>
     </footer>
