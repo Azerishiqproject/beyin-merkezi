@@ -1,0 +1,146 @@
+Proje Adı: Node.js & MongoDB Backend Sistemi
+
+1. Kullanıcı Modeli
+
+Kullanıcı ID (Otomatik oluşturulacak, benzersiz)
+
+Email (Benzersiz ve doğrulanmış olacak)
+
+Şifre (Hashlenmiş olarak tutulacak)
+
+Kullanıcı Tipi ("User" veya "Admin")
+
+Kafedra ID (Eğer kullanıcı tipi "User" ise, bağlı olduğu kafedra)
+
+Oluşturma Tarihi
+
+Güncelleme Tarihi
+
+2. Kullanıcı İşlemleri
+
+Kullanıcı kayıt olma (Email & şifre ile kayıt, şifre hashleme)
+
+Kullanıcı giriş yapma (JWT token oluşturma ve geri döndürme)
+
+Kullanıcı bilgilerini güncelleme
+
+Kullanıcıyı silme
+
+Kullanıcıları listeleme
+
+Kullanıcıya ait verileri çekme
+
+3. Kullanıcı Verileri Modeli
+
+Veri ID (Benzersiz)
+
+Kullanıcı ID (Bu verinin hangi kullanıcıya ait olduğunu belirler)
+
+Veri Başlığı
+
+Veri İçeriği
+
+Oluşturma Tarihi
+
+Güncelleme Tarihi
+
+4. Kullanıcı Verileri İşlemleri
+
+Kullanıcıya özel veri ekleme
+
+Kullanıcıya özel veri güncelleme
+
+Kullanıcıya özel veri silme
+
+Kullanıcıya özel verileri listeleme
+
+Tüm kullanıcı verilerini listeleme (Filtreleme ile: &departments={department id} parametresi eklenerek belirli bir kafedraya ait veriler listelenebilir.)
+
+5. Kafedra Modeli
+
+Kafedra ID (Benzersiz)
+
+Kafedra Adı
+
+Açıklama
+
+Oluşturma Tarihi
+
+Güncelleme Tarihi
+
+6. Kafedra İşlemleri
+
+Kafedra ekleme
+
+Kafedra güncelleme
+
+Kafedra silme
+
+Kafedraları listeleme
+
+7. API Endpoint'leri
+
+Auth İşlemleri:
+
+POST /auth/register → Kullanıcı kaydı
+
+POST /auth/login → Kullanıcı girişi, token döndürür
+
+Kullanıcı İşlemleri:
+
+GET /users → Kullanıcıları listeleme (Admin)
+
+GET /users/:id → Belirtilen kullanıcı bilgilerini çekme
+
+PUT /users/:id → Kullanıcı bilgilerini güncelleme
+
+DELETE /users/:id → Kullanıcıyı silme
+
+Kullanıcı Verileri İşlemleri:
+
+POST /user-data → Kullanıcıya ait veri ekleme
+
+GET /user-data/:userId → Kullanıcıya ait verileri listeleme
+
+GET /user-data → Tüm kullanıcı verilerini listeleme (Filtreleme için: &departments={department id} ile belirli bir kafedraya ait verileri çekme)
+
+PUT /user-data/:id → Kullanıcı verisini güncelleme
+
+DELETE /user-data/:id → Kullanıcı verisini silme
+
+Kafedra İşlemleri:
+
+POST /departments → Kafedra ekleme
+
+GET /departments → Kafedraları listeleme
+
+PUT /departments/:id → Kafedra güncelleme
+
+DELETE /departments/:id → Kafedra silme
+
+8. Güvenlik Önlemleri
+
+JWT Token tabanlı kimlik doğrulama
+
+Şifrelerin bcrypt ile hashlenmesi
+
+API isteklerinde yetkilendirme kontrolleri
+
+Veritabanı girişlerinin güvenliği için validasyon
+
+9. Kullanılacak Teknolojiler
+
+Backend: Node.js, Express.js
+
+Veritabanı: MongoDB & Mongoose
+
+Kimlik Doğrulama: JWT (JSON Web Token)
+
+Şifreleme: Bcrypt.js
+
+API Testleri: Postman veya Insomnia
+
+Veritabanı Yönetimi: MongoDB Atlas veya yerel MongoDB
+
+Bu şema, sistemin temel yapısını ve işlevlerini tanımlar. Proje geliştirme sürecinde detaylandırılabilir ve genişletilebilir.
+
