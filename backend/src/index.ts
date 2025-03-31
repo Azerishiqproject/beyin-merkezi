@@ -17,7 +17,14 @@ dotenv.config();
 const app: Application = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000', 
+    'https://beyin-merkezi.vercel.app', 
+    ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
